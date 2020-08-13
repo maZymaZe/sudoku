@@ -6,7 +6,7 @@
 #include <memory>
 #include <vector>
 
-#include "Screen.h"
+#include "Screen/Screen.h"
 
 namespace Sutoku {
 
@@ -16,11 +16,12 @@ class Game {
     void run();
 
     void handleInput();
-    void update(sf::Time delta);
+    void update();
     void render();
 
-    static const int Width = 960;
+    static const int Width = 1152;
     static const int Height = 720;
+    static int difficulty;
 
     static std::shared_ptr<Screen> Screen;
 

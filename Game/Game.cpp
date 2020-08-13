@@ -3,14 +3,14 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-#include "MenuScreen.h"
+#include "Screen/MenuScreen.h"
 
 using namespace Sutoku;
-const sf::Time Game::TimePerFrame=sf::seconds(1.f/4.f);
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 4.f);
+int Game::difficulty = 0;
+std::shared_ptr<Screen> Game::Screen = std::make_shared<MenuScreen>();
 
-std::shared_ptr<Screen> Game::Screen=std::make_shared<MenuScreen>();
-
-Game::Game:window_(sf::VideoMode(Game::Width, Game::Height),"Sutoku"){
+Game::Game() : window_(sf::VideoMode(Game::Width, Game::Height), "Sutoku") {
     bgm_init();
 }
 
@@ -18,11 +18,14 @@ void Game::handleInput() {
     sf::Event event;
 
     while (window_.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) window_.close();
+        if (event.type == sf::Event::Closed)
+            window_.close();
     }
     Game::Screen->handleInput(window_);
 }
-void Game::update(sf::Time delta) { Game::Screen->update(delta); }
+void Game::update() {
+    Game::Screen->update();
+}
 void Game::render() {
     window_.clear();
     Game::Screen->render(window_);
@@ -33,15 +36,15 @@ void Game::run() {
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
     while (window_.isOpen()) {
-        window_.setSize(sf::Vector2u(Game::Width,Game::Height));
-        
+        window_.setSize(sf::Vector2u(Game::Width, Game::Height));
+
         sf::Time delta = clock.restart();
         timeSinceLastUpdate += delta;
 
         while (timeSinceLastUpdate > Game::TimePerFrame) {
             timeSinceLastUpdate -= TimePerFrame;
             handleInput();
-            update(TimePerFrame);
+            update();
         }
         render();
     }

@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "Game/Game.h"
 int main() {
-    Game game;
+    Sutoku::Game game;
     game.run();
     return 0;
 }
