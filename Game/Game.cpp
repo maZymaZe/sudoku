@@ -6,12 +6,15 @@
 #include "Screen/MenuScreen.h"
 
 using namespace Sutoku;
-const sf::Time Game::TimePerFrame = sf::seconds(1.f / 4.f);
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 10.f);
 int Game::difficulty = 0;
+int Game::map_id= 0;
+const int Game::map_id_limit[4]={0,0,0,0};
 std::shared_ptr<Screen> Game::Screen = std::make_shared<MenuScreen>();
 
 Game::Game() : window_(sf::VideoMode(Game::Width, Game::Height), "Sutoku") {
     bgm_init();
+    Game::Screen = std::make_shared<MenuScreen>();
 }
 
 void Game::handleInput() {
@@ -22,9 +25,6 @@ void Game::handleInput() {
             window_.close();
     }
     Game::Screen->handleInput(window_);
-}
-void Game::update() {
-    Game::Screen->update();
 }
 void Game::render() {
     window_.clear();
@@ -44,8 +44,12 @@ void Game::run() {
         while (timeSinceLastUpdate > Game::TimePerFrame) {
             timeSinceLastUpdate -= TimePerFrame;
             handleInput();
-            update();
         }
         render();
     }
+}
+void Game::bgm_init() {
+    bgMusic_.openFromFile("Resource/bg.wav");
+    bgMusic_.setLoop(true);
+    bgMusic_.play();
 }

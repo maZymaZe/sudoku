@@ -11,11 +11,9 @@ class MenuScreen : public Screen {
     MenuScreen();
 
     void handleInput(sf::RenderWindow& window) override;
-    void update() override;
     void render(sf::RenderWindow& window) override;
    private:
     sf::Sprite Menu;
-    const sf::Vector2f position_={0,0};
 };
 }  // namespace Sutoku
 

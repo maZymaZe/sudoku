@@ -11,16 +11,14 @@ using namespace Sutoku;
 
 sf::Texture menu;
 
-const std::string menu_address("Resource/menu.png");
 MenuScreen::MenuScreen() {
-    sf::sleep(sf::seconds(1));
-    menu.loadFromFile(menu_address);
+    menu.loadFromFile("Resource/menu.png");
     Menu.setTexture(menu);
-    Menu.setPosition(position_);
+    Menu.setPosition({0,0});
 }
 
 void MenuScreen::handleInput(sf::RenderWindow& window) {
-    static sf::Mouse mouse;
+    sf::Mouse mouse;
     if (mouse.isButtonPressed(mouse.Left)) {
         auto mouse_position = mouse.getPosition(window);
         int mouse_x = mouse_position.x, mouse_y = mouse_position.y;
@@ -40,9 +38,6 @@ void MenuScreen::handleInput(sf::RenderWindow& window) {
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         window.close();
 }
-
-void MenuScreen::update() {}
-
 void MenuScreen::render(sf::RenderWindow& window) {
     window.draw(Menu);
 }

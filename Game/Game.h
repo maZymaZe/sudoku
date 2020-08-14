@@ -16,12 +16,13 @@ class Game {
     void run();
 
     void handleInput();
-    void update();
     void render();
 
     static const int Width = 1152;
     static const int Height = 720;
     static int difficulty;
+    static int map_id;
+    static const int map_id_limit[4]; 
 
     static std::shared_ptr<Screen> Screen;
 
