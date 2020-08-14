@@ -1,6 +1,8 @@
-setup by running the setup.bat
-(which includes " del /s "*.o" " pay attention!!)
+if you want to compile this on your computer,check the address of sfml
+    setup by running the setup.bat
+    (which includes " del /s "*.o" " pay attention!!)
 
+or you can just
 play by running the main.exe
 
 author:Maze
