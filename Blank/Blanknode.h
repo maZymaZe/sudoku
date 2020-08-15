@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace Sutoku {
+namespace Sudoku {
 class BlankNode {
    public:
     BlankNode(sf::Vector2f position = sf::Vector2f(0, 0));
@@ -15,6 +15,6 @@ class BlankNode {
     sf::Sprite num_;
     sf::Vector2f position_;
 };
-}  // namespace Sutoku
+}  // namespace Sudoku
 
 #endif

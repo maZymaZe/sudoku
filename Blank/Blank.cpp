@@ -13,7 +13,7 @@
 #include "Screen/GameOverScreen.h"
 #include "Screen/MenuScreen.h"
 
-using namespace Sutoku;
+using namespace Sudoku;
 
 const int BLANK_BEGIN[10] = {0, 12, 88, 164, 248, 324, 400, 484, 560, 636};
 const int BLANK_END[10] = {0, 84, 160, 236, 320, 396, 472, 556, 632, 708};
@@ -33,9 +33,9 @@ Blank::Blank(int difficulty) {
     std::experimental::reseed(time(NULL));
     Game::map_id =
         std::experimental::randint(0, Game::map_id_limit[difficulty]);
-    std::string sutoku_address =
-        "Sutoku/" + std::to_string(difficulty) + std::to_string(Game::map_id);
-    std::ifstream ifp(sutoku_address);
+    std::string sudoku_address =
+        "Sudoku/" + std::to_string(difficulty) + std::to_string(Game::map_id);
+    std::ifstream ifp(sudoku_address);
     char t = 0;
     for (int j = 1; j < 10; j++) {
         for (int i = 1; i < 10; i++) {
@@ -66,7 +66,7 @@ Blank::Blank(int difficulty) {
     clock.restart();
     time_as_sec = clock.getElapsedTime().asSeconds();
     font_.loadFromFile("Resource/font01.ttf");
-    std::string texttmp("Sutoku:" + std::to_string(Game::difficulty) +
+    std::string texttmp("Sudoku:" + std::to_string(Game::difficulty) +
                         std::to_string(Game::map_id) + "\n" +
                         "Time:" + std::to_string(time_as_sec / 60) + ":" +
                         std::to_string(time_as_sec % 60));
@@ -188,7 +188,7 @@ void Blank::render(sf::RenderWindow& window) {
         }
     }
     time_as_sec = clock.getElapsedTime().asSeconds();
-    std::string texttmp("Sutoku:" + std::to_string(Game::difficulty) +
+    std::string texttmp("Sudoku:" + std::to_string(Game::difficulty) +
                         std::to_string(Game::map_id) + "\n" +
                         "Time:" + std::to_string(time_as_sec / 60) + ":" +
                         std::to_string(time_as_sec % 60));

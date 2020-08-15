@@ -5,7 +5,7 @@
 
 #include "Screen.h"
 
-namespace Sutoku {
+namespace Sudoku {
 class GameOverScreen : public Screen {
    public:
     GameOverScreen();
@@ -14,6 +14,6 @@ class GameOverScreen : public Screen {
    private:
     sf::Sprite game_over_screen;
 };
-}  // namespace Sutoku
+}  // namespace Sudoku
 
 #endif

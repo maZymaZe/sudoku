@@ -7,7 +7,7 @@
 #include "Game/Game.h"
 #include "GameScreen.h"
 
-using namespace Sutoku;
+using namespace Sudoku;
 
 sf::Texture menu;
 

@@ -6,7 +6,7 @@
 #include "Game/Game.h"
 #include "Screen/MenuScreen.h"
 
-using namespace Sutoku;
+using namespace Sudoku;
 
 sf::Mouse mmouse;
 sf::Texture gameoverscreen;

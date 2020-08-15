@@ -7,7 +7,7 @@
 #include "Game/Game.h"
 #include "Screen/GameOverScreen.h"
 
-using namespace Sutoku;
+using namespace Sudoku;
 
 sf::Texture gamescreen;
 GameScreen::GameScreen() :blank(Game::difficulty){

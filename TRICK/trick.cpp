@@ -52,7 +52,7 @@ void dfs(int w) {
     }
 }
 int main() {
-    printf("you can input the Sutoku like the following:\n");
+    printf("you can input the Sudoku like the following:\n");
     printf(
         "080 600 010\n906 050 402\n004 890 005\n\n013 004 008\n070 906 "
         "030\n400 700 150\n\n200 071 600\n709 060 801\n060 009 040\n");

@@ -5,7 +5,7 @@
 
 #include "Screen/MenuScreen.h"
 
-using namespace Sutoku;
+using namespace Sudoku;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 10.f);
 int Game::difficulty = 0;
 int Game::map_id= 0;

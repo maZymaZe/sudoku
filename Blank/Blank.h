@@ -7,7 +7,7 @@
 
 #include "Blank/Blanknode.h"
 
-namespace Sutoku {
+namespace Sudoku {
 class Blank {
    public:
     Blank(int difficulty);

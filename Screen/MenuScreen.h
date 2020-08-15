@@ -5,7 +5,7 @@
 
 #include "Screen.h"
 
-namespace Sutoku {
+namespace Sudoku {
 class MenuScreen : public Screen {
    public:
     MenuScreen();
@@ -15,6 +15,6 @@ class MenuScreen : public Screen {
    private:
     sf::Sprite Menu;
 };
-}  // namespace Sutoku
+}  // namespace Sudoku
 
 #endif

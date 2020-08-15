@@ -8,7 +8,7 @@
 
 #include "Screen/Screen.h"
 
-namespace Sutoku {
+namespace Sudoku {
 
 class Game {
    public:
@@ -33,6 +33,6 @@ class Game {
     void bgm_init();
 };
 
-}  // namespace Sutoku
+}  // namespace Sudoku
 
 #endif

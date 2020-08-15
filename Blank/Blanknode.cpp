@@ -4,7 +4,7 @@
 #include <cmath>
 #include <string>
 
-using namespace Sutoku;
+using namespace Sudoku;
 
 sf::Texture num_texture[10], shape_texture[5];
 bool unloaded=0;

@@ -7,7 +7,7 @@
 #include "Game/Game.h"
 #include "Screen/Screen.h"
 
-namespace Sutoku {
+namespace Sudoku {
 class GameScreen : public Screen {
    public:
     GameScreen();
@@ -19,6 +19,6 @@ class GameScreen : public Screen {
     Blank blank;
     sf::Sprite gameScreen;
 };
-}  // namespace Sutoku
+}  // namespace Sudoku
 
 #endif
