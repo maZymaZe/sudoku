@@ -7,3 +7,11 @@ play by running the main.exe
 
 author:Maze
 2020/8/14
+
+
+1.if you can see the menu but crash when clicking the button,
+that is something wrong with the "ifstream" in my code.
+
+2. if it says libgcc_s_seh-1.dll is missing or 
+unable to start correctly 0xc000007b
+so sorry, i havn't know the reason and solution yet.
